@@ -1,4 +1,4 @@
-$a = Get-ChildItem "C:\Users" -Recurse -Directory -ErrorAction SilentlyContinue
+$a = Get-ChildItem "C:\OldAttachments" -Recurse -Directory -ErrorAction SilentlyContinue
 $a | ForEach-Object {
     $dirName = $_.FullName
     $acls = Get-Acl $dirName -ErrorAction SilentlyContinue | Select -ExpandProperty Access | Where-Object {
